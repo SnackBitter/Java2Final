@@ -14,12 +14,13 @@ public class SpringprojectApplication {
 		SpringApplication.run(SpringprojectApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(RepoServiceImpl service){
-		System.out.println("start load data!");
-		return args -> {
-			service.loadData("gnembon/carpet-extra",1);
-		};
-	}
+//	@Bean
+//	public CommandLineRunner commandLineRunner(RepoServiceImpl service){
+//		System.out.println("start load data!");
+//		return args -> {
+//			service.loadData("gnembon/carpet-extra",1);
+
+//		};
+//	}
 
 }
