@@ -16,30 +16,30 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class RepoRestController {
-    private final DeveloperRepository developerRepository;
-    private final CommitRepository commitRepository;
+  private final DeveloperRepository developerRepository;
+  private final CommitRepository commitRepository;
 
-    public RepoRestController(DeveloperRepository developerRepository,
-                              CommitRepository commitRepository) {
-        this.developerRepository = developerRepository;
-        this.commitRepository = commitRepository;
-    }
+  public RepoRestController(DeveloperRepository developerRepository,
+                            CommitRepository commitRepository) {
+    this.developerRepository = developerRepository;
+    this.commitRepository = commitRepository;
+  }
 
-    @GetMapping
-    public List<Developer> getDevelopByID(@RequestParam(value = "GithubID")
-                                       Optional<String> id){
-        return id.map(developerRepository::findByGithubId).orElse(null);
-    }
+  @GetMapping
+  public List<Developer> getDevelopByID(@RequestParam(value = "GithubID")
+                                        Optional<String> id) {
+    return id.map(developerRepository::findByGithubId).orElse(null);
+  }
 
-    @GetMapping(path = "/CommitCount")
-    public int getCommitCount(){
-        return commitRepository.findAll().size();
-    }
+  @GetMapping(path = "/CommitCount")
+  public int getCommitCount() {
+    return commitRepository.findAll().size();
+  }
 
-    @GetMapping(path = "/RepoInfo")
-    public String getRepoInfo(){
-        JSONObject a = new JSONObject();
-        a.put("Name","gnembon/carpet-extra");
-        return a.toString();
-    }
+  @GetMapping(path = "/RepoInfo")
+  public String getRepoInfo() {
+    JSONObject a = new JSONObject();
+    a.put("Name", "gnembon/carpet-extra");
+    return a.toString();
+  }
 }

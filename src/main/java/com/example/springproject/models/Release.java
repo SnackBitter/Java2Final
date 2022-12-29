@@ -5,48 +5,49 @@ import javax.persistence.*;
 @Entity
 @Table(name = "release")
 public class Release {
-    @Id
-    @Column(name = "id", nullable = false)
-    private Integer id;
+  @Id
+  @Column(name = "id", nullable = false)
+  private Integer id;
 
-    @Column(name = "repo")
-    private Integer repo;
+  @Column(name = "repo")
+  private Integer repo;
 
-    
-    @Column(name = "released_at")
-    private String releasedAt;
 
-    public Release(){
+  @Column(name = "released_at")
+  private String releasedAt;
 
-    }
-    public Release(int id, int repo, String releasedAt){
-        this.id = id;
-        this.repo = repo;
-        this.releasedAt = releasedAt;
-    }
+  public Release() {
 
-    public Integer getId() {
-        return id;
-    }
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public Release(int id, int repo, String releasedAt) {
+    this.id = id;
+    this.repo = repo;
+    this.releasedAt = releasedAt;
+  }
 
-    public Integer getRepo() {
-        return repo;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public void setRepo(Integer repo) {
-        this.repo = repo;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public String getReleasedAt() {
-        return releasedAt;
-    }
+  public Integer getRepo() {
+    return repo;
+  }
 
-    public void setReleasedAt(String releasedAt) {
-        this.releasedAt = releasedAt;
-    }
+  public void setRepo(Integer repo) {
+    this.repo = repo;
+  }
+
+  public String getReleasedAt() {
+    return releasedAt;
+  }
+
+  public void setReleasedAt(String releasedAt) {
+    this.releasedAt = releasedAt;
+  }
 
 }

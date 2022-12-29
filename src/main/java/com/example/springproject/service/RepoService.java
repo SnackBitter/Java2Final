@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface RepoService {
 
-    public Repo findInfo();
+  public Repo findInfo();
 
-    public void loadData(String repoName, int repoNum);
+  public void loadData(String repoName, int repoNum);
 }
